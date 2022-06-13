@@ -7,11 +7,20 @@ body {
     margin-top: 100px;
     background-color: antiquewhite;
 }
-button {
-    margin-left: 650px;
+#buttonGen {
+    margin-left: 570px;
     margin-top: 50px;
     text-decoration: none;   
-    background-color:azure
+    background-color:azure;
+    border: 0.5px solid black;
+}
+
+#buttonClr {
+    margin-left: 225px;
+    margin-top: 50px;
+    text-decoration: none;   
+    background-color:azure;
+    border: 0.5px solid black;
     
 }
 .card-header {
