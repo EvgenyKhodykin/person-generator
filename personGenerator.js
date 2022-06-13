@@ -108,6 +108,27 @@ const personGenerator = {
     randomProfName: function() {
         return this.randomValue(this.isMale ? this.profMaleJson : this.profFemaleJson)
     },
+    // Создаём новой свойство для даты рождения
+    randomDateOfBirth: function () {
+       const yearOfBirth = this.randomIntNumber (max = 2021, min = 1900) + 'г.'
+       const monthNumber = this.randomIntNumber (max = 11, min = 0)
+       const monthString = ['января','февраля','марта','апреля','мая','июня','июля','августа','сентября','октября','ноября','декабря']
+       const monthOfBirth = monthString[monthNumber]
+       let daysCount = 0
+       switch (monthNumber){
+        case 0,2,4,6,7,9,11:
+            daysCount = 31
+            break
+        case 3,5,8,10:
+            daysCount = 30
+            break
+        case 1:
+            daysCount = 28
+            break
+       }
+       const dayOfBirth = this.randomIntNumber (max = daysCount, min = 1)
+       return dayOfBirth +' '+ monthOfBirth +' '+ yearOfBirth
+    },
 
 
 
@@ -116,7 +137,7 @@ const personGenerator = {
         this.person.gender = this.randomGender();
         this.person.firstName = this.randomFirstName();
         this.person.surname = this.randomSurname();
-        this.person.dateOfBirth = this.randomIntNumber (max = 2021, min = 1900) + 'г.';
+        this.person.dateOfBirth = this.randomDateOfBirth ();
         this.person.profName = this.randomProfName();
         return this.person;
     }
