@@ -74,6 +74,17 @@ const personGenerator = {
             "id_5": "Тракторист"
         }
     }`,
+     // Добавляем список для отчеств
+     thirdNameJson: `{
+        "count": 5,
+        "list": {     
+            "id_1": "Александр",
+            "id_2": "Максим",
+            "id_3": "Иван",
+            "id_4": "Вячеслав",
+            "id_5": "Артём"
+        }
+    }`,
 
     GENDER_MALE: 'Мужчина',
     GENDER_FEMALE: 'Женщина',
@@ -130,23 +141,30 @@ const personGenerator = {
        return dayOfBirth +' '+ monthOfBirth +' '+ yearOfBirth
     },
 
+    // Напишем функцию для отчества
+    randomThirdName: function () {
+        const thirdName = this.randomValue(this.thirdNameJson)
+        return this.isMale ? thirdName+'ович' : thirdName+'овна'
+     },
 
 
     getPerson: function () {
         this.person = {};
         this.person.gender = this.randomGender();
         this.person.firstName = this.randomFirstName();
+        this.person.thirdName = this.randomThirdName();
         this.person.surname = this.randomSurname();
         this.person.dateOfBirth = this.randomDateOfBirth ();
         this.person.profName = this.randomProfName();
         return this.person;
     },
 
-
+    //Создадим новое свойство объекта для очистки
      getPersonClear: function () {
         this.person = {};
         this.person.gender = ' ';
         this.person.firstName = ' ';
+        this.person.thirdName = ' ';
         this.person.surname = ' ';
         this.person.dateOfBirth = ' ';
         this.person.profName = ' ';
