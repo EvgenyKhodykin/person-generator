@@ -6,4 +6,7 @@ window.onload = function(){
     document.querySelector('#birthOutput').innerText = initPerson.dateOfBirth
     document.querySelector('#profName').innerText = initPerson.profName
 }
-
+// Напишем код для кнопок генерации и очистки
+document.querySelector('#buttonGen').addEventListener('click', () => {
+    location.reload ()
+    })
