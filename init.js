@@ -10,3 +10,12 @@ window.onload = function(){
 document.querySelector('#buttonGen').addEventListener('click', () => {
     location.reload ()
     })
+
+document.querySelector('#buttonClr').addEventListener('click', () => {
+    const initPersonClear = personGenerator.getPersonClear()
+    document.querySelector('#firstNameOutput').innerText = initPersonClear.firstName
+    document.querySelector('#surnameOutput').innerText = initPersonClear.surname
+    document.querySelector('#genderOutput').innerText = initPersonClear.gender
+    document.querySelector('#birthOutput').innerText = initPersonClear.dateOfBirth
+    document.querySelector('#profName').innerText = initPersonClear.profName
+        })
