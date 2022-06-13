@@ -140,5 +140,16 @@ const personGenerator = {
         this.person.dateOfBirth = this.randomDateOfBirth ();
         this.person.profName = this.randomProfName();
         return this.person;
-    }
-};
+    },
+
+
+     getPersonClear: function () {
+        this.person = {};
+        this.person.gender = ' ';
+        this.person.firstName = ' ';
+        this.person.surname = ' ';
+        this.person.dateOfBirth = ' ';
+        this.person.profName = ' ';
+        return this.person
+     },
+ };
